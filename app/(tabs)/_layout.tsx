@@ -16,8 +16,8 @@ export default function Layout() {
               iconName = focused ? "home" : "home-outline";
             } else if (route.name === "spent") {
               iconName = focused ? "wallet" : "wallet-outline";
-            } else if (route.name === "categories") {
-              iconName = focused ? "list" : "list-outline";
+            } else if (route.name === "category") {
+              iconName = focused ? "list-sharp" : "list-outline";
             }
 
             return (
@@ -57,9 +57,9 @@ export default function Layout() {
           }}
         />
         <Tabs.Screen
-          name="categories"
+          name="category"
           options={{
-            title: "Categories",
+            title: "Category",
           }}
         />
       </Tabs>

@@ -46,3 +46,18 @@ export const getSpent = async (): Promise<Spent[]> => {
     return [];
   }
 };
+
+export const deleteCategory = async (categoryId: string) => {
+  try {
+    const existingCategories = await getCategories();
+    const updatedCategories = existingCategories.filter(
+      (category) => category.id !== categoryId
+    );
+    await AsyncStorage.setItem(
+      CATEGORIES_KEY,
+      JSON.stringify(updatedCategories)
+    );
+  } catch (error) {
+    console.error("Error deleting category:", error);
+  }
+};

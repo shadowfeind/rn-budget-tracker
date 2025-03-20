@@ -11,7 +11,7 @@ import { toast } from "sonner-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { Category, Spent } from "@/types";
-import { getSpent, saveSpent, getCategories } from "@/utils/storage";
+import { getCategories, getSpent, saveSpent } from "@/utils/storage";
 
 export default function SpentScreen() {
   const [spentItems, setSpentItems] = useState<Spent[]>([]);
