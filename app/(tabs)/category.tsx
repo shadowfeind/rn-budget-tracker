@@ -7,11 +7,12 @@ import {
   TextInput,
   Modal,
 } from "react-native";
-import { Category } from "../types";
-import { getCategories, saveCategory } from "../utils/storage";
+
 import { toast } from "sonner-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { getCategories, saveCategory } from "@/utils/storage";
+import { Category } from "@/types";
 
 export default function CategoryScreen() {
   const [categories, setCategories] = useState<Category[]>([]);
