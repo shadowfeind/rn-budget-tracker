@@ -5,6 +5,7 @@ import { Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { getCategories, getSpent } from "@/utils/storage";
 import { SpendingByCategory } from "@/types";
+import GradientHeader from "@/components/GradientHeader";
 
 export default function HomeScreen() {
   const [totalSpent, setTotalSpent] = useState(0);
@@ -68,6 +69,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView className="flex-1 bg-[#EEF1DA]">
+      {/* <GradientHeader header="Dashboard" /> */}
       <LinearGradient
         colors={["#ADB2D4", "#C7D9DD"]}
         className="p-6 rounded-b-3xl"
@@ -88,14 +90,14 @@ export default function HomeScreen() {
           </Text>
           <LineChart
             data={{
-              labels: ["6M", "5M", "4M", "3M", "2M", "1M"],
+              labels: ["5M", "4M", "3M", "2M", "1M"],
               datasets: [
                 {
                   data: spendingData,
                 },
               ],
             }}
-            width={Dimensions.get("window").width - 48}
+            width={Dimensions.get("window").width - 62}
             height={220}
             chartConfig={{
               backgroundColor: "#ADB2D4",
